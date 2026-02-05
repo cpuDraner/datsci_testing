@@ -5,6 +5,7 @@ these functions share the same data
 """
 
 import sklearn
+import numpy as np
 
 #common classifiers are in scikit learm
 #some of the best are their own (xgboost)
