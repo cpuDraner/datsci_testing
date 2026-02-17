@@ -21,4 +21,4 @@ Printing accuracy, we get a success rate of 0.8689556749496307.
 
 ## Homework 4
 Running the classifier again, we get a success rate of 0.7238979118329466 for random forest and 0.7682134570765661 for xgboost.
-Installing fasttext required a lot of extra work. The provided solution was not effective. In the end, the best solution I could find was using a downgraded python instance.
+Installing fasttext required a lot of extra work. The provided solution was not effective. In the end, the best solution I could find was copying the git into my main drive, and installing from there after [modifying the get_pybind_include function](https://github.com/pybind/python_example/issues/32#issuecomment-387037509)
