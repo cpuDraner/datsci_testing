@@ -7,7 +7,7 @@ import pandas as pd
 
 
 class HAR:
-    def __init__(self, path: str, n_people: int):
+    def __init__(self, path: str, n_people: int=9999):
         """Take in a path, read in the data files
 
         Args:
@@ -132,7 +132,7 @@ class HAR:
         min_interval_df = None
         last_start = None
         first_end = None
-        dfs = {"hrs": hrs, "mots": mots, "lbls": lbls, scs:"scs"}
+        dfs = {"hrs": hrs, "mots": mots, "lbls": lbls, "scs": scs}
         sampling_intervals = {}
         for name, df in dfs.items():
             df_sorted = df.sort_values("timestamp")
@@ -228,6 +228,7 @@ class HAR:
 
 if __name__ == "__main__":
     har = HAR(
-        "data/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0"
+        "data/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0",
+        10
     )
     print(har.df)

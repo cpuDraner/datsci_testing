@@ -14,3 +14,14 @@ I'll make a new column in the data frame titled 'grantees' that contains each gr
 - The dates for Articles are problematic. Can you fix them?
 
 The program initially only reads line breaks for the dates. I can fix them by redefining how the data frame reads the date/time info should work.
+
+## Homework 3
+First I modified HAR to include step count. Presumably, if someone is asleep their step count should be low or zero. Then I took the asbolute value of the individual's movement, as if they're asleep they're likely also moving a lot less. They would also have a lower heart rate, so that can be used as well. 
+Printing accuracy, we get a success rate of 0.8689556749496307.
+
+## Homework 4
+Running the classifier again, we get a success rate of 0.7238979118329466 for random forest and 0.7682134570765661 for xgboost.
+Installing fasttext required a lot of extra work. The provided solution was not effective. In the end, the best solution I could find was copying the git into my main drive, and installing from there after [modifying the get_pybind_include function](https://github.com/pybind/python_example/issues/32#issuecomment-387037509)
+
+## Homework 5
+The simplest way I can think of to reduce comparisons is by first grouping the phone numbers by area code. This does assume little to no typos in the phone number, but it would significantly reduce the number of comparisons assuming that the pool of unique area codes is varied enough.

@@ -15,7 +15,7 @@ class Phonebooks:
         error:float is the rate of errors, from 0 to 1. A rate of 0.5 would mean every other character in a name, on average, would be replaced.
         """
         self.original=None
-        self.genBook(path=names, count=count)
+        self.genBook(path=names,count=count)
         self.error1=self.original
         self.error2=self.original
         self.error1=self.error1.map(lambda x: mistake(x,error))
@@ -31,7 +31,7 @@ class Phonebooks:
         for i in range(count):
             first=first+[lnames[random.randrange(0, len(lnames))]]
             last=last+[lnames[random.randrange(0, len(lnames))]]
-        self.original=pd.DataFrame({'First':first, 'Last':last})
+        self.original=pd.DataFrame({'First':first,'Last':last})
 
 def mistake(name,error):
     """"
