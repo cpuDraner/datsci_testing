@@ -1,6 +1,7 @@
 import gzip
 import pandas as pd
 import xml.etree.ElementTree as ET
+import sqlalchemy
 #from datetime import datetime
 
 class Articles():
@@ -98,6 +99,27 @@ class Articles():
     def get_entries(self):
         """Get parsed articles"""
         return self.article_df
+    
+    def to_db(self, path: str = "data/article_grant_db.sqlite"):
+        """Send the read-in data to the database
+
+        Args:
+            path (str, optional): Location of sqlite file.
+                Defaults to 'data/article_grant_db.sqlite'.
+        """
+        # Define the connection
+        engine = sqlalchemy.create_engine("sqlite:///data/article_grant_db.sqlite")
+        connection = engine.connect()
+        self.article_df[["ArticleTitle","PMID"]].rename(columns = {'ArticleTitle':'title','PMID':'pmid'}).to_sql(
+            "articles", connection, if_exists="append", index=False
+        )
+
+    def _from_db(self):
+        """Load the data from the database"""
+        engine = SQLAlchemy.create_engine("sqlite:///data/article_grant_db.sqlite")
+        connection = engine.connect()
+        df = pd.read_sql("SELECT * FROM grants", connection)
+        return df
     
 
 if __name__ == '__main__':
