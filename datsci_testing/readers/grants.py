@@ -100,7 +100,7 @@ class Grants:  # class names in python are camel case (e.g. GrantReader)
 
     def _from_db(self):
         """Load the data from the database"""
-        engine = SQLAlchemy.create_engine("sqlite:///data/article_grant_db.sqlite")
+        engine = sqlalchemy.create_engine("sqlite:///data/article_grant_db.sqlite")
         connection = engine.connect()
         df = pd.read_sql("SELECT * FROM articles", connection)
         return df

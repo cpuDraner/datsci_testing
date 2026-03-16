@@ -8,7 +8,8 @@ import pandas as pd
 
 class HAR:
     def __init__(self, path: str, n_people: int=9999):
-        """Take in a path, read in the data files
+        """
+        Take in a path, read in the data files
 
         Args:
             path (str): the BASE path of the directory
