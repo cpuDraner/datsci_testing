@@ -2,6 +2,7 @@ import gzip
 import pandas as pd
 import xml.etree.ElementTree as ET
 import sqlalchemy
+
 #from datetime import datetime
 
 class Articles():

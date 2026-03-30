@@ -25,3 +25,6 @@ Installing fasttext required a lot of extra work. The provided solution was not 
 
 ## Homework 5
 The simplest way I can think of to reduce comparisons is by first grouping the phone numbers by area code. This does assume little to no typos in the phone number, but it would significantly reduce the number of comparisons assuming that the pool of unique area codes is varied enough.
+
+## Homework 9
+To train the model, I used video footage of myself and my cat. With only a few seconds of footage for each, the model was very successful at identifying when the cat was in frame. It shows high levels of 'cat' any time the cat was on screen, and high levels of me anytime I was. When it was just pointed at a wall, it got confused, but this makes sense given I didn't train it to recognize walls. Since the model only has to differentiate between two very different things, it can be effectively trained on minimal training data.
